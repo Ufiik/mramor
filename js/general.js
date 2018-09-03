@@ -56,7 +56,8 @@
 (function ($, undefined) {
   var $hamburgerLink = $('.hamburger'),
       $wrapperNav = $('.wrapper-nav'),
-      $navContainer = $('.nav__container');
+      $navContainer = $('.nav__container'),
+      $header = $('.header');
 
   $hamburgerLink.on('click', function (e) {
     e.preventDefault();
