@@ -6,38 +6,100 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.min.css">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body class="body no-scroll">
   <div class="preloader">
       <div class="preloader__logo">
-        <svg width="57" height="59" viewBox="0 0 57 59"><path d="M57.000,58.999 L42.880,58.999 L28.313,35.601 L14.119,59.000 L0.000,59.000 L37.815,-0.000 L44.287,10.114 L35.126,24.730 L57.000,58.999 ZM12.243,11.351 L18.765,0.117 L25.817,11.051 L18.524,22.016 L12.243,11.351 Z"></path></svg>
+        <svg width="87" height="89" viewBox="0 0 57 59"><path d="M57.000,58.999 L42.880,58.999 L28.313,35.601 L14.119,59.000 L0.000,59.000 L37.815,-0.000 L44.287,10.114 L35.126,24.730 L57.000,58.999 ZM12.243,11.351 L18.765,0.117 L25.817,11.051 L18.524,22.016 L12.243,11.351 Z"></path></svg>
       </div>
   </div>
 
   <div class="wrapper scld2">
     <header class="header">
-      <div class="header__container container">
-        <div class="logo">
-          <span class="logo__text">le Club</span>
-        </div>
-        <div class="hamburger">
-          <div class="hamburger__container">
-            <a href="#" class="hamburger__link">menu</a>
+      <div class="header__wrap_bg">
+        <div class="header__container container">
+          <div class="logo">
+            <a href="#">
+              <span class="logo__text">le Club</span>
+            </a>
           </div>
+          <div class="hamburger">
+            <div class="toggle-icon">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div><!-- /toggle-icon -->
+          </div><!-- /nav-container -->
         </div>
       </div>
-      <div class="wrapper-nav">
-        <nav class="nav">
-          <div class="nav__container container">
-            adsasd
+      <div class="wrapper-nav hidden-nav">
+        <div class="wrapper-nav-bg container">
+          <div class="logo">
+            <a href="#"><span class="logo__pic">
+              <svg width="37" height="39" viewBox="0 0 57 59"><path d="M57.000,58.999 L42.880,58.999 L28.313,35.601 L14.119,59.000 L0.000,59.000 L37.815,-0.000 L44.287,10.114 L35.126,24.730 L57.000,58.999 ZM12.243,11.351 L18.765,0.117 L25.817,11.051 L18.524,22.016 L12.243,11.351 Z"></path></svg>
+            </span>
+            <span class="logo__text">le Club</span></a>
           </div>
-        </nav>
+          <div class="nav">
+            <nav class="nav__container container">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">О клубе</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">Календарь событий</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">Наши лекторы</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">Новости</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link nav__join-to">
+                    <span class="nav__text">Заявка на членство</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">Контакты</span>
+                    <span class="nav__line"></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
+    <!-- <div class="content-logo__wrapper">
+      <div class="content-logo">
+        <svg width="87" height="89" viewBox="0 0 57 59"><path d="M57.000,58.999 L42.880,58.999 L28.313,35.601 L14.119,59.000 L0.000,59.000 L37.815,-0.000 L44.287,10.114 L35.126,24.730 L57.000,58.999 ZM12.243,11.351 L18.765,0.117 L25.817,11.051 L18.524,22.016 L12.243,11.351 Z"></path></svg>
+      </div>
+    </div> -->
   </div>
 
+  <input type="text" name="initials" class="join-to__initials">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.min.js"></script>
+
   <script src="js/preloader.min.js"></script>
   <script src="js/general.js"></script>
 </body>

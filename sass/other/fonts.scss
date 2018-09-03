@@ -1,11 +1,2 @@
-@font-face {
-    font-family: 'Dewberry';
-    src: url('fonts/Dewberry/Dewberry.eot');
-    src: url('fonts/Dewberry/Dewberry.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Dewberry/Dewberry.woff2') format('woff2'),
-        url('fonts/Dewberry/Dewberry.woff') format('woff'),
-        url('fonts/Dewberry/Dewberry.ttf') format('truetype'),
-        url('fonts/Dewberry/Dewberry.svg#Dewberry') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Amaranth|Oswald:200,400&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
