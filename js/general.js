@@ -72,7 +72,7 @@
   });
 })(jQuery);
 
-// МОДАЛЬНАЯ ФОРМА ALERT
+// МОДАЛЬНАЯ ФОРМА ALERT --------------------
 
 (function ($, undefined) {
   var $joinTo = $('.nav__join-to');
@@ -177,7 +177,7 @@
   });
 })(jQuery);
 
-// AJAX ссылки
+// AJAX ссылки -----------------------
 
 (function ($, undefined) {
     var $content = $('.content'),
@@ -207,10 +207,57 @@
           insertContent('html/about.html', animateAbout);
         });
 
-        function animateAbout() {
-          var $about = $('.about');
+// Ссылка о нас --------------------------
 
-          $about.toggleClass('animated bounce');
+        function animateAbout() {
+          var $about = $('.about'),
+              $aboutCaption = $('.about__caption'),
+              $aboutButtons = $('.about__buttons'),
+              $aboutText = $about.find('.about__text');
+
+            $aboutCaption.fadeTo(0,0);
+
+            $aboutText.each(function (i, item) {
+              $(item).fadeTo(0, 0);
+            });
+
+            $aboutButtons.fadeTo(0,0);
+
+          $about.animate({
+            'min-height': '420px'
+          }, {
+            'duration': 1000,
+            'complete': function () {
+              $aboutCaption.addClass('animated fadeInUp');
+
+              $aboutText.each(function (i, item) {
+                $(item).addClass('animated fadeInUp');
+              });
+
+              $aboutButtons.addClass('animated fadeInRight');
+            }
+          });
+
+          // SWAlert для кнопки "Подробнее"
+
+          var $aboutButton = $('.about__button');
+
+          $aboutButton.on('click', function (e) {
+            e.preventDefault();
+
+            swal({
+              title: 'О нас',
+              showCloseButton: true,
+              animation: false,
+              backdrop: '#fff',
+              width: '70%',
+              customClass: 'animated zoomInUp custom-alert',
+              showConfirmButton: false,
+              
+              html:
+                '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+            })
+          });
         }
 })(jQuery);
 
