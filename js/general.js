@@ -20,7 +20,7 @@
       fill: '#ffffff',
       thickness: 1,
       animation: {
-        duration: 1
+        duration: 2000
       }
       }
 
@@ -193,11 +193,15 @@
           $hamburgerLink.toggleClass('pushed');
 
           setTimeout(function () {
-            $content.fadeOut(1000, function () {
+            $navContainer.toggleClass('r-lines');
+          }, 1000)
+
+          setTimeout(function () {
+            $content.fadeTo(1500, 0, function () {
               $(this).empty();
 
               $(this).load(contentURL, function () {
-                $(this).fadeTo(1, 1, animationCallback);
+                $(this).fadeTo(0, 1, animationCallback);
               });
             });
           }, 500);
@@ -253,7 +257,7 @@
               width: '70%',
               customClass: 'animated zoomInUp custom-alert',
               showConfirmButton: false,
-              
+
               html:
                 '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
             })
