@@ -104,12 +104,11 @@
       showCloseButton: true,
       animation: false,
       customClass: 'animated zoomInUp custom-alert',
-      backdrop: '#fff',
+      backdrop: '#ffffff',
       confirmButtonText: 'Отправить',
       confirmButtonColor: '#8bb4af',
       showLoaderOnConfirm: true,
       confirmButtonClass: 'join-confirm-btn',
-      onBeforeOpen: alert(212),
 
       html:
       '<span>Ваше полное имя</span>' +
@@ -132,11 +131,11 @@
             errors = [];
 
         if ($values[0].value.length < 5 || $values[0].value.length > 30) {
-          errors.push("- Указано неккоректное имя.<br>");
+          errors.push("- Указано некорректное имя.<br>");
         }
 
         if (!validDate($values[1].value)) {
-          errors.push("- Неккоректная дата рождения. Дата должна быть формата ГГГГ-ММ-ЧЧ.<br>");
+          errors.push("- Некорректная дата рождения. Дата должна быть формата ГГГГ-ММ-ЧЧ.<br>");
         }
 
         if (!validCirilic($values[2].value) || $values[2].value.length > 30) {
@@ -176,4 +175,47 @@
       $(this).toggleClass('chkd');
     });
   });
-})(jQuery)
+})(jQuery);
+
+// AJAX ссылки
+
+(function ($, undefined) {
+    var $content = $('.content'),
+        $links = $('.nav__link'),
+        $wrapperNav = $('.wrapper-nav'),
+        $hamburgerLink = $('.hamburger'),
+        $navContainer = $('.nav__container'),
+
+        $aboutLink = $($links[0]);
+
+        function insertContent(contentURL, animationCallback) {
+          $wrapperNav.toggleClass('hidden-nav');
+          $hamburgerLink.toggleClass('pushed');
+
+          setTimeout(function () {
+            $content.fadeOut(1000, function () {
+              $(this).empty();
+
+              $(this).load(contentURL, function () {
+                $(this).fadeTo(1, 1, animationCallback);
+              });
+            });
+          }, 500);
+         }
+
+        $aboutLink.on('click', function () {
+          insertContent('html/about.html', animateAbout);
+        });
+
+        function animateAbout() {
+          var $about = $('.about');
+
+          $about.toggleClass('animated bounce');
+        }
+})(jQuery);
+
+// Кнопки
+
+(function ($, undefined) {
+
+})(jQuery);
