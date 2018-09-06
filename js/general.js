@@ -20,7 +20,7 @@
       fill: '#ffffff',
       thickness: 1,
       animation: {
-        duration: 2000
+        duration: 1
       }
       }
 
@@ -72,7 +72,7 @@
   });
 })(jQuery);
 
-// МОДАЛЬНАЯ ФОРМА ALERT --------------------
+//------------------------- МОДАЛЬНАЯ ФОРМА ЗАЯВКИ --------------------------
 
 (function ($, undefined) {
   var $joinTo = $('.nav__join-to');
@@ -177,7 +177,7 @@
   });
 })(jQuery);
 
-// AJAX ссылки -----------------------
+//---------------------------- ССЫЛКИ ИЗ НАВИГАЦИИ  -----------------------
 
 (function ($, undefined) {
     var $content = $('.content'),
@@ -207,11 +207,12 @@
           }, 500);
          }
 
+
+// -------------------------------- Ссылка "О НАС" --------------------------
+
         $aboutLink.on('click', function () {
           insertContent('html/about.html', animateAbout);
         });
-
-// Ссылка о нас --------------------------
 
         function animateAbout() {
           var $about = $('.about'),
@@ -263,10 +264,12 @@
             })
           });
         }
-})(jQuery);
 
-// Кнопки
+// ---------------------- Ссылка "Календарь событий" -------------------------
+      var $calendarButton = $($links[1]);
 
-(function ($, undefined) {
+      $calendarButton.on('click', function () {
+        insertContent('html/calendar.html');
+      });
 
 })(jQuery);
