@@ -1,2 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth|Oswald:200,400&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+@font-face {
+    font-family: 'Albertus Nova';
+    src: url('fonts/Mont/AlbertusNova.eot');
+    src: url('fonts/Mont/AlbertusNova.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Mont/AlbertusNova.woff2') format('woff2'),
+        url('fonts/Mont/AlbertusNova.woff') format('woff'),
+        url('fonts/Mont/AlbertusNova.ttf') format('truetype'),
+        url('fonts/Mont/AlbertusNova.svg#AlbertusNova') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

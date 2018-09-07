@@ -188,6 +188,9 @@
 
         $aboutLink = $($links[0]);
 
+// Функция insertContent занимается ajxa-запросами и плавными переходами,
+// второй аргумент callback-функция
+
         function insertContent(contentURL, animationCallback) {
           $wrapperNav.toggleClass('hidden-nav');
           $hamburgerLink.toggleClass('pushed');
@@ -215,6 +218,8 @@
         });
 
         function animateAbout() {
+          document.title = 'О клубе';
+
           var $about = $('.about'),
               $aboutCaption = $('.about__caption'),
               $aboutButtons = $('.about__buttons'),
@@ -268,8 +273,63 @@
 // ---------------------- Ссылка "Календарь событий" -------------------------
       var $calendarButton = $($links[1]);
 
-      $calendarButton.on('click', function () {
-        insertContent('html/calendar.html');
-      });
+      function initPopUps() {
+        $('.calendar__date-day_event').tooltipster({
+          animation: 'grow',
+          maxWidth: 400
+        });
+      }
 
+      function calendarAnimate() {
+        document.title = 'Календарь событий';
+
+        var pageflip = new RocketPageFlip('.bb-bookblock', {
+          current: 0, // page to display
+          navigation: false, // show pagination
+          directionalNav: true, // show prev/next navigation buttons
+          prevText: '<img src="css/img/icons/left-arrow.svg" alt="left-arrow">', // text for prev button
+          nextText: '<img src="css/img/icons/right-arrow.svg" alt="rights-arrow">' // text for next button
+        });
+
+        var $calendarBoockblock = $('#bb-bookblock'),
+            $calendar = $('.calendar'),
+            $firstPage = $($calendar.find('.page')[0]),
+
+            $firstPageCaption = $($firstPage.find('.calendar__caption')),
+            $firstPageDates = $($firstPage.find('.calendar__date')),
+            $firstPageYear = $($firstPage.find('.calendar__year')),
+
+            $flipPrev = $calendar.find('.flip-prev'),
+            $flipNext = $calendar.find('.flip-next');
+
+
+        console.log($('.flip-next'));
+
+        $firstPageCaption.fadeTo(0,0);
+        $firstPageDates.fadeTo(0,0);
+        $firstPageYear.fadeTo(0,0);
+
+        $calendarBoockblock.animate({
+          'opacity': '1',
+          'height': '800px'
+        }, {
+          'duration': 500,
+          'complete': function () {
+            $firstPageCaption.addClass('animated fadeInUp');
+            $firstPageDates.addClass('animated fadeInRight');
+            $firstPageYear.addClass('animated fadeInUp');
+
+            $calendar.addClass('notepad-shadow');
+
+            $flipPrev.addClass('animated zoomInLeft slow');
+            $flipNext.addClass('animated zoomInRight slow');
+          }
+        });
+
+        initPopUps();
+      }
+
+      $calendarButton.on('click', function () {
+        insertContent('html/calendar.html', calendarAnimate);
+      });
 })(jQuery);
